@@ -9,23 +9,23 @@
 		var number=document.getElementById("txtnumber").value;
 		len = number.length;
 		if(len < 4){
-			pow = 0;
+			div = 1;
 			text ='';
 		}
 		else if(len < 7){
-			pow = 3;
+			div = 1000;
 			text = 'ngàn';
 		}
 		else if(len < 10){
-			pow = 6;
+			div = 1000000;
 			text = 'triệu';
 		}
 		else {
-			pow = 9;
+			div = 1000000000;
 			text = 'tỷ';
 		}
-		val = number/Math.pow(10, pow);
-		result = val + ' ' + text +' đồng';
+		val = number / div;
+		result = val + ' ' + text +' VNĐ';
 		document.getElementById("result").innerHTML = result;
 	}
 </script>
